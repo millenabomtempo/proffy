@@ -21,9 +21,11 @@ function Favorites() {
     });
   }
 
-  useFocusEffect(() => {
-    loadFavorites();
-  });
+  useFocusEffect(
+    React.useCallback(() => {
+      loadFavorites();
+    }, [])
+  )
 
   return (
     <View style={styles.container}>
